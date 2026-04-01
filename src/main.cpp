@@ -407,11 +407,15 @@ int main(int argc, char* argv[])
         DrawVirtualObject("the_sphere");
 
         // Desenhamos o modelo do coelho
-        model = Matrix_Translate(1.0f,0.0f,0.0f);
-        glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
-        glUniform1i(g_object_id_uniform, BUNNY);
-        DrawVirtualObject("the_bunny");
+        for (float i = 0; i < 16; i++)
+        {
+            model = Matrix_Rotate_Y(2.0f*M_PI/16.0f * i) * Matrix_Translate(2.0f,sin(glfwGetTime()/2.0f*4+2.0f*M_PI/16.0f*i*4.0f),0.0f) * Matrix_Scale(0.3f,0.3f,0.3f) * Matrix_Rotate_Y(3.2f*M_PI/2.0f);
+            model = Matrix_Rotate_Y(1*glfwGetTime()) * model;
+            glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
+            glUniform1i(g_object_id_uniform, BUNNY);
+            DrawVirtualObject("the_bunny");
 
+        }
         // Desenhamos o plano do chão
         model = Matrix_Translate(0.0f,-1.0f,0.0f) * Matrix_Scale(4.0f,1.0f,4.0f);
         glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
