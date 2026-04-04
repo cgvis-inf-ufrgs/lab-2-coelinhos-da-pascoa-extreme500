@@ -30,20 +30,20 @@
 > - Novamente, lembre-se que você *não pode utilizar ferramentas
 >   de IA para escrever este relatório*
 
-<mark>`
-* Para os 16 coelhos, siga as instruções a seguir.
-* Rotacione o coelho levemente para que ele fique olhando para o centro mais tarde.
-* De 4 em 4 coelhos, adicione uma rotação em X relativa ao tempo (para que o coelho dê piruetas).
-* Escale o coelho em um valor entre 0 e 1 para diminuir o tamanho do modelo.
-* Translade o coelho em um x para a distância da origem desejada e em y usando seno e o tempo, para que os coelhos fiquem subindo e descendo.
-* Rotacione o coelho em X usando o tempo e a posição "i" do coelho da fila no cálculo (para que eles fiquem separados no círculo girando com o tempo).
-* Adicione duas esferas e as escale para que diminuam de tamanho, mantendo o valor y levemente maior que o x e y para ter um formato oval.
-* Rotacione em Z os ovos para a direção contrária à qual ele irá girar futuramente, relativa ao tempo (para que o ovo se mantenha de "pé" enquanto orbita o coelho).
-* Translade um ovo para a distância da qual ele deve ficar do coelho, e o outro ovo para a distância contrária da qual ele deve ficar do coelho (ex.: 1 e -1).
-* Rotacione em Z os ovos para a direção à qual ele irá girar futuramente, relativa ao tempo.
-* Agora, faça para ambos os ovos a mesma translação e todas as outras transformações seguintes que o coelho faz também.
-* Abaixe levemente o chão para que nenhum objeto fique atravessando ele.
-`</mark>
+
+<mark>`* Para os 16 coelhos, siga as instruções a seguir.`</mark>
+<mark>`* Rotacione o coelho levemente para que ele fique olhando para o centro mais tarde.`</mark>
+<mark>`* De 4 em 4 coelhos, adicione uma rotação em X relativa ao tempo (para que o coelho dê piruetas).`</mark>
+<mark>`* Escale o coelho em um valor entre 0 e 1 para diminuir o tamanho do modelo.`</mark>
+<mark>`* Translade o coelho em um x para a distância da origem desejada e em y usando seno e o tempo, para que os coelhos fiquem subindo e descendo.`</mark>
+<mark>`* Rotacione o coelho em X usando o tempo e a posição "i" do coelho da fila no cálculo (para que eles fiquem separados no círculo girando com o tempo).`</mark>
+<mark>`* Adicione duas esferas e as escale para que diminuam de tamanho, mantendo o valor y levemente maior que o x e y para ter um formato oval.`</mark>
+<mark>`* Rotacione em Z os ovos para a direção contrária à qual ele irá girar futuramente, relativa ao tempo (para que o ovo se mantenha de "pé" enquanto orbita o coelho).`</mark>
+<mark>`* Translade um ovo para a distância da qual ele deve ficar do coelho, e o outro ovo para a distância contrária da qual ele deve ficar do coelho (ex.: 1 e -1).`</mark>
+<mark>`* Rotacione em Z os ovos para a direção à qual ele irá girar futuramente, relativa ao tempo.`</mark>
+<mark>`* Agora, faça para ambos os ovos a mesma translação e todas as outras transformações seguintes que o coelho faz também.`</mark>
+<mark>`* Abaixe levemente o chão para que nenhum objeto fique atravessando ele.`</mark>
+
 
 ## Principais dificuldades encontradas durante o desenvolvimento (formato livre)
 
