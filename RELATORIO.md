@@ -55,8 +55,8 @@
 
 ## Se você quiser compartilhar mais alguma coisa, coloque aqui:
 
-<mark>`Achei extremamente divertido o laboratório, e acho que consegui aplicar bem os conhecimentos sobre matrizes, finalmente! Talvez vale ressaltar o uso da linha "#define _USE_MATH_DEFINES" antes de "#include <cmath>" para usuários de Windows, que eu ACHO que foi o problema que eu enfrentei em casa.`</mark>
+<mark>`Achei extremamente divertido o laboratório, e acho que consegui aplicar bem os conhecimentos sobre matrizes, finalmente!`</mark>
 
 ## Se você possui alguma sugestão para o professor sobre esta atividade, coloque aqui:
 
-<mark>`<preencher>`</mark>
+<mark>`Tudo de acordo. Talvez vale ressaltar o uso da linha "#define _USE_MATH_DEFINES" antes de "#include <cmath>" para usuários de Windows, que eu ACHO que foi o problema que eu enfrentei em casa.`</mark>
