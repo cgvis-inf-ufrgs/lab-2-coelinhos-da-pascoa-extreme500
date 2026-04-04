@@ -15,6 +15,8 @@
 //  vira
 //    #include <cstdio> // Em C++
 //
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include <cmath>
 #include <cstdio>
 #include <cstdlib>
@@ -400,24 +402,45 @@ int main(int argc, char* argv[])
         #define BUNNY  1
         #define PLANE  2
 
-        // Desenhamos o modelo da esfera
-        model = Matrix_Translate(-1.0f,0.0f,0.0f);
+        
+
+        // Desenhamos o modelo de cada coelho
+        for (float i = 0; i < 16; i++)
+        {
+            if((int)i % 4 == 0)
+            {
+                model = Matrix_Rotate_Y(2.0f*M_PI/16.0f * i) * Matrix_Translate(2.0f,0.4f + sin((glfwGetTime()/2.0f)*4.0f+2.0f*M_PI/16.0f*i*4.0f),0.0f) * Matrix_Scale(0.3f,0.3f,0.3f) * Matrix_Rotate_X(-glfwGetTime()*2 - 1.6f) * Matrix_Rotate_Y(3.2f*M_PI/2.0f);
+                model = Matrix_Rotate_Y(glfwGetTime()/2.0f) * model;
+                glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
+                glUniform1i(g_object_id_uniform, BUNNY);
+                DrawVirtualObject("the_bunny");
+            }
+            else
+            {
+                model = Matrix_Rotate_Y(2.0f*M_PI/16.0f * i) * Matrix_Translate(2.0f,0.4f + sin((glfwGetTime()/2.0f)*4.0f+2.0f*M_PI/16.0f*i*4.0f),0.0f) * Matrix_Scale(0.3f,0.3f,0.3f) * Matrix_Rotate_Y(3.2f*M_PI/2.0f);
+                model = Matrix_Rotate_Y(glfwGetTime()/2.0f) * model;
+                glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
+                glUniform1i(g_object_id_uniform, BUNNY);
+                DrawVirtualObject("the_bunny");
+            }
+
+        // Desenhamos o modelo da primeira esfera
+        model = Matrix_Rotate_Y(2.0f*M_PI/16.0f * i) * Matrix_Translate(2.0f,0.4f + sin((glfwGetTime()/2.0f)*4.0f+2.0f*M_PI/16.0f*i*4.0f),0.0f) * Matrix_Rotate_Z(-2*glfwGetTime()) * Matrix_Translate(0.4f, 0, 0)* Matrix_Rotate_Z(2*glfwGetTime()) * Matrix_Scale(0.1f,0.15f,0.1f);
+        model = Matrix_Rotate_Y(glfwGetTime()/2.0f) * model;
         glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
         glUniform1i(g_object_id_uniform, SPHERE);
         DrawVirtualObject("the_sphere");
 
-        // Desenhamos o modelo do coelho
-        for (float i = 0; i < 16; i++)
-        {
-            model = Matrix_Rotate_Y(2.0f*M_PI/16.0f * i) * Matrix_Translate(2.0f,sin(glfwGetTime()/2.0f*4+2.0f*M_PI/16.0f*i*4.0f),0.0f) * Matrix_Scale(0.3f,0.3f,0.3f) * Matrix_Rotate_Y(3.2f*M_PI/2.0f);
-            model = Matrix_Rotate_Y(1*glfwGetTime()) * model;
-            glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
-            glUniform1i(g_object_id_uniform, BUNNY);
-            DrawVirtualObject("the_bunny");
+        // Desenhamos o modelo da segunda esfera
+        model = Matrix_Rotate_Y(2.0f*M_PI/16.0f * i) * Matrix_Translate(2.0f,0.4f + sin((glfwGetTime()/2.0f)*4.0f+2.0f*M_PI/16.0f*i*4.0f),0.0f) * Matrix_Rotate_Z(-2*glfwGetTime()) * Matrix_Translate(-0.4f, 0, 0)* Matrix_Rotate_Z(2*glfwGetTime()) * Matrix_Scale(0.1f,0.15f,0.1f);
+        model = Matrix_Rotate_Y(glfwGetTime()/2.0f) * model;
+        glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
+        glUniform1i(g_object_id_uniform, SPHERE);
+        DrawVirtualObject("the_sphere");
 
         }
         // Desenhamos o plano do chão
-        model = Matrix_Translate(0.0f,-1.0f,0.0f) * Matrix_Scale(4.0f,1.0f,4.0f);
+        model = Matrix_Translate(0.0f,-1.2f,0.0f) * Matrix_Scale(4.0f,1.0f,4.0f);
         glUniformMatrix4fv(g_model_uniform, 1 , GL_FALSE , glm::value_ptr(model));
         glUniform1i(g_object_id_uniform, PLANE);
         DrawVirtualObject("the_plane");
